@@ -1,0 +1,17 @@
+{
+  "name": "audio-editor",
+  "version": "2.0.0",
+  "description": "audio editor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No test specified\""
+  },
+  "keywords": [
+    "[]"
+  ],
+  "author": "Jan Skalický",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.42.1"
+  }
+}
