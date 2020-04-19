@@ -4,14 +4,34 @@
   "description": "audio editor",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"No test specified\""
+    "dev": "webpack-dev-server --env.mode development --watch",
+    "prod": "webpack --env.mode production",
+    "debug": "node --inspect-brk ./node_modules/webpack/bin/webpack.js",
+    "prod:debug": "npm run debug -- --env.mode production",
+    "dev:debug": "npm run debug -- --env.mode development"
   },
   "keywords": [
     "[]"
   ],
   "author": "Jan Skalický",
   "license": "ISC",
+  "dependencies": {
+    "html2canvas": "^1.0.0-rc.5",
+    "jquery": "^3.4.0",
+    "jquery-ui": "^1.12.0",
+    "peaks.js": "git+https://github.com/Skaaala/peaks.js.git"
+  },
   "devDependencies": {
-    "webpack": "^4.42.1"
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-typescript": "^7.9.0",
+    "babel-loader": "^8.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "source-map-loader": "^0.2.4",
+    "typescript": "^3.8.3",
+    "webpack-dev-server": "^3.1.14",
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3",
+    "webpack-merge": "^4.2.1"
   }
 }

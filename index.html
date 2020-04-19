@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MV audio editor</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="src/css/style.css">
+
+    <script src="node_modules/html2canvas/dist/html2canvas.js"></script>
+    <script src="node_modules/peaks.js/peaks.js"></script>
+    <!--<script src="js/peaks.js"></script>-->
+    <!--<script src="https://turbo.github.io/js/turbo.js"></script>-->
+
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"
+            integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
+            integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+
+    <script src="dist/main.js"></script>
+    <script src="main.js"></script>
+    <!--<script src="js/gpuTest.js"></script>-->
+
+</head>
+<body>
+<h1>MV audio editor</h1>
+<input id="mvaudio__input_file" type="file" accept="audio/*"/>
+
+<div style="position: relative;">
+    <div id="mvaudio__loader">
+        <div class="mvaudio__loader-animation-wrap">
+            <div class="mvaudio__loader-animation-spinner"></div>
+        </div>
+    </div>
+
+    <div id="mvaudio__message"></div>
+
+    <div class="mvaudio__waveform-container-wrap">
+        <div id="mvaudio__waveform-container">
+        </div>
+    </div>
+
+    <audio id="mvaudio__audio-element">
+        <!--<source src="TEST_NAHRAVKA.mp3"></source>-->
+    </audio>
+    <div id="mvaudio__controls">
+        <div class="mvaudio__controls-wrap">
+            <div class="mvaudio__controls_left">
+                <button id="mvaudio__btn-play">
+                    <i class="fa fa-play"></i>
+                </button>
+
+                <button id="mvaudio__btn-pause">
+                    <i class="fa fa-pause"></i>
+                </button>
+
+                <button id="mvaudio__btn-seek-backward">
+                    <i class="fa fa-angle-double-left"></i>
+                </button>
+
+                <button id="mvaudio__btn-seek-forward">
+                    <i class="fa fa-angle-double-right"></i>
+                </button>
+
+                <button id="mvaudio__btn-zoom-in">
+                    <i class="fa fa-plus"></i>
+                </button>
+
+                <button id="mvaudio__btn-zoom-out">
+                    <i class="fa fa-minus"></i>
+                </button>
+
+                <button id="mvaudio__btn-add-point" class="mvaudio-text-white mvaudio-bg-blue">
+                    <i class="fa fa-plus"></i>
+                    <span>Vložit bod</span>
+                </button>
+
+                <button id="mvaudio__btn-select-all" class="mvaudio-text-white mvaudio-bg-blue">
+                    <i class="fa fa-arrows-alt-h"></i>
+                    <span>Vybrat vše</span>
+                </button>
+
+                <button id="mvaudio__btn-remove-points">
+                    <i class="fa fa-trash-alt"></i>
+                    <span>Odstranit body</span>
+                </button>
+
+                <button id="mvaudio__btn-delete" class="mvaudio-text-white mvaudio-bg-red">
+                    <i class="fa fa-cut"></i>
+                    <span>Smazat úsek</span>
+                </button>
+
+                <div id="mvaudio__change-volume-slider" class="mvaudio__slider-wrap">
+                    <div id="mvaudio__volume-slider"></div>
+                    <div id="mvaudio__volume-slider-value">&nbsp;</div>
+                </div>
+
+                <button id="mvaudio__btn-change-volume" class="mvaudio-text-white mvaudio-bg-grey">
+                    <i class="fa fa-volume-up"></i>
+                    <span>Změnit hlasitost úseku</span>
+                </button>
+
+                <button id="mvaudio__btn-beep">
+                    <i class="fa fa-rss"></i>
+                    <span>Vypípnout</span>
+                </button>
+
+                <button id="mvaudio__btn-fade-in">
+                    <i class="fa fa-signal"></i>
+                    <span>Fade in</span>
+                </button>
+
+                <button id="mvaudio__btn-fade-out">
+                    <i class="fa fa-signal rotate-x-axis"></i>
+                    <span>Fade out</span>
+                </button>
+
+                <button id="mvaudio__btn-undo">
+                    <i class="fa fa-undo"></i>
+                    <span>Vrátit předchozí změnu</span>
+                </button>
+            </div>
+            <div class="mvaudio__controls_right">
+                <button id="mvaudio__btn-save" class="mvaudio-text-white mvaudio-bg-green">
+                    <i class="fas fa-save"></i>
+                    <span>Uložit</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+

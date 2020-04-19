@@ -1,0 +1,140 @@
+.mvaudio-text-white {
+    color: #fff;
+}
+
+.mvaudio-bg-red {
+    background-color: #f44b42;
+}
+
+.mvaudio-bg-green {
+    background-color: #87c442;
+}
+
+.mvaudio-bg-blue {
+    background-color: #18bce0;
+}
+
+.mvaudio-bg-grey {
+    background-color: #888;
+}
+
+.mvaudio__waveform-container-wrap {
+    border: solid 1px #888;
+}
+
+#mvaudio__waveform-container {
+    background-size: 100%;
+    height: 400px;
+    width: 100%;
+}
+
+#mvaudio__loader {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+.mvaudio__loader-animation-wrap {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mvaudio__loader-animation-spinner {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border: solid 5px #000;
+    border-left-color: #18bce0;
+    border-top-color: #f44b42;
+    border-right-color: #ffa200;
+    border-bottom-color: #87c442;
+    border-radius: 50%;
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+#mvaudio__controls {
+    display: none;
+}
+
+.mvaudio__controls-wrap {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    align-items: center;
+}
+
+.mvaudio__controls_left {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mvaudio__controls_right {
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-start;
+}
+
+.mvaudio__controls-wrap button {
+    padding: 8px 12px;
+    margin: 0 5px 10px 5px;
+    white-space: nowrap;
+}
+
+.mvaudio__controls-wrap button:hover {
+    cursor: pointer;
+    opacity: 0.85;
+}
+
+.mvaudio__slider-wrap
+{
+    margin-left: 30px;
+    margin-right: 10px;
+}
+
+.mvaudio__slider-wrap {
+    display: inline-block;
+    width: 150px;
+    position: relative;
+    top: 10px;
+}
+
+.mvaudio__slider-wrap .ui-slider-horizontal {
+    height: 6px;
+}
+
+.mvaudio__slider-wrap .ui-slider-handle {
+    height: 14px;
+    background-color: #888;
+}
+
+#mvaudio__volume-slider-value {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 8px;
+    color: #888;
+}
+
+#mvaudio__message {
+    padding: 5px 0;
+}
+
+.mvaudio__btn-disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.rotate-x-axis {
+    transform: scaleX(-1);
+}
